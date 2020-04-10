@@ -1,0 +1,35 @@
+<resources>
+
+  <!-- Base application theme. -->
+  <!--
+    Dark Mode Theming
+    https://github.com/material-components/material-components-android/blob/master/docs/theming/Dark.md
+  -->
+  <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+    <item name="colorOnPrimary">@color/white</item>
+    <item name="colorSecondary">?colorPrimary</item>
+    <item name="colorSecondaryVariant">?colorPrimaryVariant</item>
+    <item name="colorOnSecondary">@color/white</item>
+    <item name="colorError">@color/red_700</item>
+    <item name="colorOnError">@color/white</item>
+    <item name="colorSurface">@color/white</item>
+    <item name="colorOnSurface">@color/black</item>
+    <item name="android:colorBackground">@color/white</item>
+    <item name="colorOnBackground">@color/black</item>
+  </style>
+
+  <style name="AppTheme.NoActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+  </style>
+
+  <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+  <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+  <style name="AppTheme.NavDrawer" parent="AppTheme.AppBarOverlay" />
+
+</resources>
