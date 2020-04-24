@@ -43,10 +43,16 @@ allprojects {
     materialVersion = '1.1.0'
     databindingCompilerVersion = '3.1.4'
 
+    // Dagger
+    // https://github.com/google/dagger
+    daggerVersion = '2.27'
+
     // Navigation
+    // https://developer.android.com/jetpack/androidx/releases/navigation
     navigationVersion = '2.2.2'
 
     // LeakCanary
+    // https://square.github.io/leakcanary/
     leakCanaryVersion = '2.2'
 
     // Testing
@@ -61,6 +67,17 @@ allprojects {
     fragmentTestVersion = '1.2.4'
   }
 
+}
+
+// https://github.com/google/dagger
+// If you're using the Android Databinding library, you may want to increase the number of errors
+// that javac will print. When Dagger prints an error, databinding compilation will halt and
+// sometimes print more than 100 errors, which is the default amount for javac. For more
+// information, see Issue 306.
+gradle.projectsEvaluated {
+  tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xmaxerrs" << "500" // or whatever number you want
+  }
 }
 
 task clean(type: Delete) {

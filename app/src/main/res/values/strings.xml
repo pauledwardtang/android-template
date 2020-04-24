@@ -12,4 +12,14 @@
   <string name="menu_slideshow">Slideshow</string>
 
   <string name="home_second">Home Second</string>
+
+  <!-- Home -->
+  <string name="home_greeting">This is the home Fragment</string>
+
+  <!-- Gallery -->
+  <string name="gallery_greeting">This is the gallery Fragment</string>
+
+  <!-- Slideshow -->
+  <string name="slideshow_greeting">This is the slideshow Fragment</string>
+
 </resources>

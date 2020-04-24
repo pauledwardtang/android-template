@@ -24,7 +24,10 @@ android {
     }
   }
 
-  dataBinding.enabled = true
+  dataBinding {
+    enabled = true
+    enabledForTests = true
+  }
 
   testOptions {
     unitTests {
@@ -61,6 +64,14 @@ dependencies {
   implementation "com.google.android.material:material:$materialVersion"
   kapt "com.android.databinding:compiler:$databindingCompilerVersion"
 
+  // Dagger
+  implementation "com.google.dagger:dagger:$daggerVersion"
+  implementation "com.google.dagger:dagger-android:$daggerVersion"
+  implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+  kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+  kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+  kapt "com.google.dagger:dagger-android-support:$daggerVersion"
+
   // Navigation
   implementation "androidx.navigation:navigation-fragment:$navigationVersion"
   implementation "androidx.navigation:navigation-ui:$navigationVersion"
@@ -79,6 +90,7 @@ dependencies {
   testImplementation "androidx.test:rules:$androidXTestRulesVersion"
   testImplementation "androidx.test.espresso:espresso-core:$espressoCoreVersion"
   testImplementation "org.robolectric:robolectric:$robolectricVersion"
+  kaptTest "com.google.dagger:dagger-compiler:$daggerVersion"
 
   androidTestImplementation "androidx.test.ext:junit:$jUnitExtVersion"
   androidTestImplementation "androidx.test.ext:junit-ktx:$jUnitExtKtxVersion"
@@ -87,6 +99,7 @@ dependencies {
   androidTestImplementation "androidx.test:runner:$androidXTestRunnerVersion"
   androidTestImplementation "androidx.test:rules:$androidXTestRulesVersion"
   androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCoreVersion"
+  kaptAndroidTest "com.google.dagger:dagger-compiler:$daggerVersion"
 
   debugImplementation "androidx.fragment:fragment-testing:$fragmentTestVersion"
 

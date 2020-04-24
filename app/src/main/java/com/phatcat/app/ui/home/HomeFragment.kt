@@ -4,14 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.phatcat.app.databinding.FragmentHomeBinding
+import dagger.android.support.DaggerFragment
+import javax.inject.Inject
 
-class HomeFragment : Fragment() {
+class HomeFragment : DaggerFragment() {
 
-  private val viewModel by viewModels<HomeViewModel>()
+  @Inject lateinit var viewModel: HomeViewModel
   private var binding: FragmentHomeBinding? = null
 
   override fun onCreateView(

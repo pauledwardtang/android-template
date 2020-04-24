@@ -4,14 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.phatcat.app.databinding.FragmentGalleryBinding
+import dagger.android.support.DaggerFragment
+import javax.inject.Inject
 
-class GalleryFragment : Fragment() {
+class GalleryFragment : DaggerFragment() {
 
-  private val viewModel by viewModels<GalleryViewModel>()
+  @Inject lateinit var viewModel: GalleryViewModel
+
   private var binding: FragmentGalleryBinding? = null
 
   override fun onCreateView(
